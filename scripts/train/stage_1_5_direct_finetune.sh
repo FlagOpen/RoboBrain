@@ -8,7 +8,8 @@ export VISION_MODEL_VERSION=/home/vlm/pretrain_model/siglip-so400m-patch14-384
 export MM_PROJECTOR=mm-projection_Qwen2.5-7B-Instruct_siglip-so400m-patch14-384-stage1
 export PRETRAIN_MM_MLP_ADAPTER=/home/vlm/workspace/checkpoints/projectors/${MM_PROJECTOR}/mm_projector.bin
 
-export DATA_PATH=/home/vlm/finetune_json/yaml/onevision-1_5.yaml
+export DATA_PATH=/path/to/stage_1_5.yaml
+
 export IMAGE_FOLDER=/home/vlm/train_images
 export VIDEO_FOLDER=/home/vlm/train_videos
 export OUTPUT_DIR=/home/vlm/workspace/checkpoints/${BASE_RUN_NAME}

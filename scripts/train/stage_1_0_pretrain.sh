@@ -5,8 +5,9 @@ export BASE_RUN_NAME=mm-projection_Qwen2.5-7B-Instruct_siglip-so400m-patch14-384
 export LLM_VERSION=/home/vlm/pretrain_model/Qwen2.5-7B-Instruct
 export VISION_MODEL_VERSION=/home/vlm/pretrain_model/siglip-so400m-patch14-384
 
-export DATA_PATH=/home/vlm/pretrain_json/blip_laion_cc_sbu_558k.json
-export IMAGE_FOLDER=/home/vlm/train_images/pretrain_laion
+export DATA_PATH=/path/to/stage_1.yaml
+
+export IMAGE_FOLDER=/home/vlm/train_images
 export OUTPUT_DIR=/home/vlm/workspace/checkpoints/projectors/${BASE_RUN_NAME}
 
 export PROMPT_VERSION=plain

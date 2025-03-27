@@ -1,0 +1,183 @@
+datasets:
+#######################################
+  - json_path: /home/vlm/finetune_json/robovqa_800k.json
+    sampling_strategy: all
+  - json_path: /home/vlm/finetune_json/3rscan_plan_11k.json
+    sampling_strategy: all
+  - json_path: /home/vlm/finetune_json/3rscan_qa_32k.json
+    sampling_strategy: all
+  - json_path: /home/vlm/finetune_json/mmscan_object_cap_40k.json
+    sampling_strategy: all
+  - json_path: /home/vlm/finetune_json/mmscan_qa_881k.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/mmscan_region_cap_3k.json
+    sampling_strategy: all
+  - json_path: /home/vlm/finetune_json/scanqa_25k.json
+    sampling_strategy: all
+  - json_path: /home/vlm/finetune_json/sqa3d_26k.json
+    sampling_strategy: all
+#######################################
+  - json_path: /home/vlm/finetune_json/rtx/train/discriminative_affordance_(negative)_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/discriminative_affordance_(positive)_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/future_prediction_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/generative_affordance_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/past_description_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/planning_remaining_steps_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/planning_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/planning_with_context_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/success_(negative)_task_generated_templates.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/finetune_json/rtx/train/success_(positive)_task_generated_templates.json
+    sampling_strategy: "first:20%"
+#######################################
+  - json_path: /home/vlm/OV_stage_OneVision_json/llava_next_raw_format/llava_next_raw_format_processed.json
+    sampling_strategy: "first:34%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/mavis_math_metagen/mavis_math_metagen.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/mavis_math_rule_geo/mavis_math_rule_geo.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/cambrian(filtered)/cambrian(filtered)_processed.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/VisualWebInstruct(filtered)/VisualWebInstruct(filtered).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/llavar_gpt4_20k/llavar_gpt4_20k.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/ai2d(gpt4v)/ai2d_gpt4v.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/infographic_vqa/infographic_vqa.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/infographic(gpt4v)/infographic(gpt4v).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/lrv_chart/lrv_chart.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/lrv_normal(filtered)/lrv_normal(filtered).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/allava_instruct_vflan4v/allava_instruct_vflan4v.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/allava_instruct_laion4v/allava_instruct_laion4v.json
+    sampling_strategy: "first:20%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/textocr(gpt4v)/textocr(gpt4v).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/ai2d(internvl)/ai2d(internvl).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/textcaps/textcaps.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/ureader_qa/ureader_qa_processed.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/ureader_cap/ureader_cap.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/ureader_ie/ureader_ie.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/ureader_kg/ureader_kg_processed.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/vision_flan(filtered)/vision_flan(filtered).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/mathqa/mathqa.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/geo3k/geo3k.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/geo170k(align)/geo170k(align).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/sharegpt4o/sharegpt4o.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/sharegpt4v(coco)/sharegpt4v(coco).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/sharegpt4v(knowledge)/sharegpt4v(knowledge).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/sharegpt4v(llava)/sharegpt4v(llava).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/sharegpt4v(sam)/sharegpt4v(sam).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/CLEVR-Math(MathV360K)/CLEVR-Math(MathV360K).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/Geometry3K(MathV360K)/Geometry3K(MathV360K).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/GeoQA+(MathV360K)/GeoQA+(MathV360K).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/GEOS(MathV360K)/GEOS(MathV360K).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/IconQA(MathV360K)/IconQA(MathV360K).json
+    sampling_strategy: "first:3%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/MapQA(MathV360K)/MapQA(MathV360K).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/Super-CLEVR(MathV360K)/Super-CLEVR(MathV360K).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/TabMWP(MathV360K)/TabMWP(MathV360K).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/UniGeo(MathV360K)/UniGeo(MathV360K).json 
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/VizWiz(MathV360K)/VizWiz(MathV360K).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/magpie_pro(qwen2_72b_st)/magpie_pro(qwen2_72b_st).json
+    sampling_strategy: "end:13%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/magpie_pro(l3_80b_st)/magpie_pro(l3_80b_st).json
+    sampling_strategy: "end:13%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/magpie_pro(l3_80b_mt)/magpie_pro(l3_80b_mt).json
+    sampling_strategy: "end:13%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/image_textualization(filtered)/image_textualization(filtered).json
+    sampling_strategy: "first:13%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/ai2d(cauldron,llava_format)/ai2d_llava_format_2434.json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/chart2text(cauldron)/chart2text(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/chartqa(cauldron,llava_format)/chartqa(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/diagram_image_to_text(cauldron)/diagram_image_to_text(cauldron).json
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/hateful_memes(cauldron,llava_format)/hateful_memes(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/hitab(cauldron,llava_format)/hitab(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/iam(cauldron)/iam(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/infographic_vqa_llava_format/infographic_vqa_llava_format.json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/intergps(cauldron,llava_format)/intergps(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/mapqa(cauldron,llava_format)/mapqa(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/rendered_text(cauldron)/rendered_text(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/robut_sqa(cauldron)/robut_sqa(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/robut_wikisql(cauldron)/robut_wikisql(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/screen2words(cauldron)/screen2words(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/tabmwp(cauldron)/tabmwp(cauldron).json
+    sampling_strategy: "first:3%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/tallyqa(cauldron,llava_format)/tallyqa(cauldron,llava_format).json
+    sampling_strategy: "first:3%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/st_vqa(cauldron,llava_format)/st_vqa(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/tqa(cauldron,llava_format)/tqa(cauldron,llava_format).json
+    sampling_strategy: "first:3%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/visual7w(cauldron,llava_format)/visual7w(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/visualmrc(cauldron)/visualmrc(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/vqarad(cauldron,llava_format)/vqarad(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/vsr(cauldron,llava_format)/vsr(cauldron,llava_format).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/vistext(cauldron)/vistext(cauldron).json
+    sampling_strategy: "first:6%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/websight(cauldron)/websight(cauldron).json
+    sampling_strategy: "first:6%"
+#######################################
+  - json_path: /home/vlm/finetune_json/m4_instruct_annotations_cvt.json # released in lmms-lab/M4-Instruct
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/0_30_s_academic_v0_1/0_30_s_academic_oe_v0_1_qa_processed.json # will be released in next version of LLaVA-NeXT-Video
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/OV_stage_OneVision_json/0_30_s_academic_v0_1/0_30_s_academic_v0_1_cap_processed.json # will be released in next version of LLaVA-NeXT-Video
+    sampling_strategy: "first:68%"
+  - json_path: /home/vlm/finetune_json/m4_instruct_video_cvt.json # download from sharegpt4video
+    sampling_strategy: "first:68%"

@@ -5,7 +5,8 @@ export BASE_RUN_NAME=resume_finetune_Llava-Onevision-siglip-qwen2.5-stage-2_ov
 export PREV_STAGE_CHECKPOINT=/home/vlm/workspace/checkpoints/resume_finetune_Llava-Onevision-siglip-qwen2.5-stage-2_si
 export VISION_MODEL_VERSION=/home/vlm/pretrain_model/siglip-so400m-patch14-384
 
-export DATA_PATH=/home/vlm/finetune_json/yaml/onevision-2_ov.yaml
+export DATA_PATH=/path/to/stage_2_ov.yaml
+
 export IMAGE_FOLDER=/home/vlm/train_images
 export VIDEO_FOLDER=/home/vlm/train_videos
 export OUTPUT_DIR=/home/vlm/workspace/checkpoints/${BASE_RUN_NAME}

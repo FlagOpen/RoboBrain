@@ -68,7 +68,7 @@ def convert_state_dict_to_hf(state_dict):
         new_state_dict[key] = value.to(torch.float16)
     return new_state_dict
 
-def convert_llava_to_hf(model_dir, pytorch_dump_folder_path):
+def convert_llava_to_hf(model_dir, dump_path):
     # load original config
     filepath = os.path.join(model_dir, "config.json")
     # read json
@@ -146,10 +146,10 @@ def convert_llava_to_hf(model_dir, pytorch_dump_folder_path):
         dim=0,
     )
 
-    print(f"Saving model and processor for {model_dir} to {pytorch_dump_folder_path}")
-    Path(pytorch_dump_folder_path).mkdir(exist_ok=True)
-    model.save_pretrained(pytorch_dump_folder_path)
-    processor.save_pretrained(pytorch_dump_folder_path)
+    print(f"Saving model and processor for {model_dir} to {dump_path}")
+    Path(dump_path).mkdir(exist_ok=True)
+    model.save_pretrained(dump_path)
+    processor.save_pretrained(dump_path)
 
     # Make space so we can load the model properly now.
     del state_dict
@@ -161,8 +161,8 @@ if __name__ == "__main__":
         "--model_dir", type=str, required=True, help="Path to the input PyTorch model directory."
     )
     parser.add_argument(
-        "--pytorch_dump_folder_path", type=str, required=True, help="Path to the output PyTorch model directory."
+        "--dump_path", type=str, required=True, help="Path to the output PyTorch model directory."
     )
     args = parser.parse_args()
 
-    convert_llava_to_hf(args.model_dir, args.pytorch_dump_folder_path)
+    convert_llava_to_hf(args.model_dir, args.dump_path)
