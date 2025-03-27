@@ -9,7 +9,12 @@
 <p align="center">
         </a>&nbsp&nbsp⭐️ <a href="https://superrobobrain.github.io/">Project</a></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/BAAI/RoboBrain/">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://superrobobrain.github.io/">ModelScope</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="http://arxiv.org/abs/2502.21257">Paper</a>&nbsp&nbsp | &nbsp&nbsp💬 <a href="https://superrobobrain.github.io/">WeChat</a>
 </p>
-
+<p align="center">
+        </a>&nbsp&nbsp🎯 <a href="">RoboOS (Coming Soon)</a>: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
+</p>
+<p align="center">
+</a>&nbsp&nbsp🎯 <a href="https://tanhuajie.github.io/ReasonRFT/">ReasonRFT</a>: Exploring a New RFT Paradigm to Enhance RoboBrain's Visual Reasoning Capabilities.
+</p>
 
 Recent advancements in Multimodal Large Language Models (MLLMs) have shown remarkable capabilities across various multimodal contexts. However, their application in robotic scenarios, particularly for long-horizon manipulation tasks, reveals significant limitations. These limitations arise from the current MLLMs lacking three essential robotic brain capabilities: **(1) Planning Capability**, which involves decomposing complex manipulation instructions into manageable sub-tasks; **(2) Affordance Perception**, the ability to recognize and interpret the affordances of interactive objects; and **(3) Trajectory Prediction**, the foresight to anticipate the complete manipulation trajectory necessary for successful execution. To enhance the robotic brain's core capabilities from abstract to concrete, we introduce ShareRobot, a high-quality heterogeneous dataset that labels multi-dimensional information such as task planning, object affordance, and end-effector trajectory. ShareRobot's diversity and accuracy have been meticulously refined by three human annotators. Building on this dataset, we developed RoboBrain, an MLLM-based model that combines robotic and general multi-modal data, utilizes a multi-stage training strategy, and incorporates long videos and high-resolution images to improve its robotic manipulation capabilities. Extensive experiments demonstrate that RoboBrain achieves state-of-the-art performance across various robotic tasks, highlighting its potential to advance robotic brain capabilities.
 
@@ -54,7 +59,7 @@ This repository supports:
 
 | Models | Checkpoint | Description | 
 |----------|----------------|----------------|
-| Base Planning Model   | [🤗 Planning Checkpoint]("https://huggingface.co/BAAI/RoboBrain/)   | Used for Planning prediction in our paper | 
+| Base Planning Model   | [🤗 Planning Checkpoint](https://huggingface.co/BAAI/RoboBrain/)   | Used for Planning prediction in our paper | 
 | A-LoRA for Affordance | [🤗 Affordance Checkpoint](https://superrobobrain.github.io/) | Used for Affordance prediction in our paper *(Coming Soon)* | 
 | T-LoRA for Trajectory | [🤗 Trajectory Checkpoint](https://superrobobrain.github.io/) | Used for  Trajectory prediction in our paper *(Coming Soon)* | 
 
