@@ -2,12 +2,12 @@
 <img src="./assets/logo.jpg" width="400"/>
 </div>
 
-# [CVPR 2025] RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
+# RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
 
 
 
 <p align="center">
-        </a>&nbsp&nbsp⭐️ <a href="https://superrobobrain.github.io/">Project</a></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://superrobobrain.github.io/">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://superrobobrain.github.io/">ModelScope</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="http://arxiv.org/abs/2502.21257">Paper</a>&nbsp&nbsp | &nbsp&nbsp💬 <a href="https://superrobobrain.github.io/">WeChat</a>
+        </a>&nbsp&nbsp⭐️ <a href="https://superrobobrain.github.io/">Project</a></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/BAAI/RoboBrain/">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://superrobobrain.github.io/">ModelScope</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="http://arxiv.org/abs/2502.21257">Paper</a>&nbsp&nbsp | &nbsp&nbsp💬 <a href="https://superrobobrain.github.io/">WeChat</a>
 </p>
 
 
@@ -28,17 +28,25 @@ This repository supports:
 
 ## 🗞️ News
 
+- **`2025-03-27`**: 🤗 We have released [Planning Checkpoint](https://huggingface.co/BAAI/RoboBrain/) in Huggingface.
 - **`2025-03-26`**: 🔥 We have released the [RoboBrain](https://superrobobrain.github.io/) repository.
-
 - **`2025-02-27`**: 🌍 Our [RoboBrain](https://superrobobrain.github.io/) was accepted to CVPR2025.
 
 
-## 🤖 Models
+## 📆 Todo
+- [x] Release scripts for model training and inference.
+- [x] Release Planning checkpoint.
+- [ ] Release Affordance and Trajectory checkpoints.
+- [ ] Release ShareRobot dataset.
+- [ ] Release evaluation scripts for Benchmarks.
+- [ ] Training more powerful Robobrain (v2).
 
 
-- **[`Base Planning Model`](https://superrobobrain.github.io/)**: The model was trained on general datasets in Stages 1–2 and on the Robotic Planning dataset in Stage 3, which is designed for Planning prediction.
-- **[`A-LoRA for Affordance`](https://superrobobrain.github.io/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Affordance dataset to predict affordance.
-- **[`T-LoRA for Trajectory`](https://superrobobrain.github.io/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Trajectory dataset to predict trajectory.
+## 🤗 Models
+
+- **[`Base Planning Model`](https://huggingface.co/BAAI/RoboBrain/)**: The model was trained on general datasets in Stages 1–2 and on the Robotic Planning dataset in Stage 3, which is designed for Planning prediction.
+- **[`A-LoRA for Affordance`](https://github.com/FlagOpen/RoboBrain/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Affordance dataset to predict affordance.
+- **[`T-LoRA for Trajectory`](https://github.com/FlagOpen/RoboBrain/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Trajectory dataset to predict trajectory.
 
 <div align="center">
 <img src="./assets/training.png" />
@@ -46,14 +54,19 @@ This repository supports:
 
 | Models | Checkpoint | Description | 
 |----------|----------------|----------------|
-| Base Planning Model   | [Planning Checkpoint](https://superrobobrain.github.io/)   | Used for Planning prediction in our paper | 
-| A-LoRA for Affordance | [Affordance Checkpoint](https://superrobobrain.github.io/) | Used for Affordance prediction in our paper | 
-| T-LoRA for Trajectory | [Trajectory Checkpoint](https://superrobobrain.github.io/) | Used for  Trajectory prediction in our paper | 
+| Base Planning Model   | [🤗 Planning Checkpoint]("https://huggingface.co/BAAI/RoboBrain/)   | Used for Planning prediction in our paper | 
+| A-LoRA for Affordance | [🤗 Affordance Checkpoint](https://superrobobrain.github.io/) | Used for Affordance prediction in our paper *(Coming Soon)* | 
+| T-LoRA for Trajectory | [🤗 Trajectory Checkpoint](https://superrobobrain.github.io/) | Used for  Trajectory prediction in our paper *(Coming Soon)* | 
 
 
 ## 🛠️ Setup
 
 ```bash
+# clone repo.
+git clone https://github.com/FlagOpen/RoboBrain.git
+cd RoboBrain
+
+# build conda env.
 conda create -n robobrain python=3.10
 conda activate robobrain
 pip install -r requirements.txt
@@ -64,34 +77,46 @@ pip install -r requirements.txt
 ### 1. Data Preparation
 
 ```bash
-datasets:
-    - yaml_path: /path/to/stage_1.yaml
-        - json_path: xxx.json
-        - json_path: xxx.json
+# Modify datasets for Stage 1, please refer to:
+- yaml_path: scripts/train/yaml/stage_1_0.yaml
 
-    - yaml_path: /path/to/stage_1_5.yaml
-        - json_path: xxx.json
-        - json_path: xxx.json
+# Modify datasets for Stage 1.5, please refer to:
+- yaml_path: scripts/train/yaml/stage_1_5.yaml
 
-    - yaml_path: /path/to/stage_2_si.yaml
-        - json_path: xxx.json
-        - json_path: xxx.json
+# Modify datasets for Stage 2_si, please refer to:
+- yaml_path: scripts/train/yaml/stage_2_si.yaml
 
-    - yaml_path: /path/to/stage_2_ov.yaml
-        - json_path: xxx.json
-        - json_path: xxx.json
+# Modify datasets for Stage 2_ov, please refer to:
+- yaml_path: scripts/train/yaml/stage_2_ov.yaml
 
-    - yaml_path: /path/to/stage_3_planning.yaml
-        - json_path: xxx.json
-        - json_path: xxx.json
+# Modify datasets for Stage 3_plan, please refer to:
+- yaml_path: scripts/train/yaml/stage_3_planning.yaml
 
-    - yaml_path: /path/to/stage_4_affordance.yaml
-        - json_path: xxx.json
-        - json_path: xxx.json
+# Modify datasets for Stage 4_aff, please refer to:
+- yaml_path: scripts/train/yaml/stage_4_affordance.yaml
 
-    - yaml_path: /path/to/stage_4_trajectory.yaml
-        - json_path: xxx.json
-        - json_path: xxx.json
+# Modify datasets for Stage 4_traj, please refer to:
+- yaml_path: scripts/train/yaml/stage_4_trajectory.yaml
+```
+**Note:** The sample format in each json file should be like:
+```json
+{
+    "id": "xxxx",
+    "image": [
+        "image1.png",
+        "image2.png",
+    ],
+    "conversations": [
+        {
+            "from": "human",
+            "value": "<image>\n<image>\nAre there numerous dials near the bottom left of the tv?"
+        },
+        {
+            "from": "gpt",
+            "value": "Yes. The sun casts shadows ... a serene, clear sky."
+        }
+    ]
+},
 ```
 
 ### 2. Training 
@@ -117,35 +142,106 @@ bash scripts/train/stage_4_0_resume_finetune_lora_a.sh
 # Training on Stage 4_traj:
 bash scripts/train/stage_4_0_resume_finetune_lora_t.sh
 ```
+**Note:** Please change the environment variables (e.g. *DATA_PATH*, *IMAGE_FOLDER*, *PREV_STAGE_CHECKPOINT*) in the script to your own.
 
-## 🤖 Evaluation
-
-### 1. Data Preparation
-
+### 3. Convert original weights to HF weights
 ```bash
-
+python scripts/infer/convert_robobrain_to_hf.py --model_dir /path/to/original/checkpoint/ --dump_path /path/to/output/
 ```
 
-### 2. Evaluation for Robotic Benchmarks
-```bash
-
-```
-
-### 3. Evaluation for General Benchmarks
-```bash
-
-```
 
 ## 🤖 Inference
 
 ### Option 1: HF inference
-```bash
+
+#### Run python script as example:
+```python
+import torch
+from transformers import AutoProcessor, AutoModelForPreTraining
+
+model_id = "BAAI/RoboBrain"
+
+print("Loading Checkpoint ...")
+model = AutoModelForPreTraining.from_pretrained(
+    model_id, 
+    torch_dtype=torch.float16, 
+    low_cpu_mem_usage=True, 
+).to("cuda:0")
+
+processor = AutoProcessor.from_pretrained(model_id)
+
+# Define a chat history and use `apply_chat_template` to get correctly formatted prompt
+# Each value in "content" has to be a list of dicts with types ("text", "image") 
+messages = [
+    {
+        "role": "user",
+        "content": [
+            {"type": "text", "text": "What is shown in this image?"},
+            {"type": "image", "url": "http://images.cocodataset.org/val2017/000000039769.jpg"},
+        ],
+    },
+]
+
+print("Processing input...")
+inputs = processor.apply_chat_template(
+    messages, 
+    add_generation_prompt=True, 
+    tokenize=True, 
+    return_dict=True, 
+    return_tensors="pt"
+)
+
+inputs = {k: v.to("cuda:0") for k, v in inputs.items()}
+
+print("Generating output...")
+output = model.generate(**inputs, max_new_tokens=250)
+print(processor.decode(output[0][2:], skip_special_tokens=True))
 
 ```
 
 ### Option 2: VLLM inference
+#### Install and launch VLLM
 ```bash
+# Install vllm package
+pip install vllm==0.6.6.post1
 
+# Launch Robobrain with vllm
+python -m vllm.entrypoints.openai.api_server --model BAAI/RoboBrain --served-model-name robobrain  --max_model_len 16384 --limit_mm_per_prompt image=8
+```
+
+#### Run python script as example:
+```python
+from openai import OpenAI
+import base64
+
+openai_api_key = "robobrain-123123" 
+openai_api_base = "http://127.0.0.1:8000/v1"
+
+client = OpenAI(
+    api_key=openai_api_key,
+    base_url=openai_api_base,
+)
+
+response = client.chat.completions.create(
+    model="robobrain",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": "http://images.cocodataset.org/val2017/000000039769.jpg"
+                    },
+                },
+                {"type": "text", "text": "What is shown in this image?"},
+            ],
+        },
+    ]
+)
+
+content = response.choices[0].message.content
+print(content)
 ```
 
 
