@@ -14,6 +14,7 @@ export OUTPUT_DIR=/home/vlm/workspace/checkpoints/${BASE_RUN_NAME}
 export PROMPT_VERSION=qwen_2
 
 export IMAGE_ASPECT_RATIO=anyres_max_9
+export MM_TUNABLE_PARTS="lora"
 export IMAGE_GRID_PINPOINTS="(1x1),...,(6x6)"
 
 export NUM_GPUS=8
