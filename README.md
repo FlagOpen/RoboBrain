@@ -2,7 +2,7 @@
 <img src="./assets/logo.jpg" width="400"/>
 </div>
 
-# RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
+# **RoboBrain**: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
 
 
 
@@ -16,8 +16,7 @@
 </a>&nbsp&nbsp🎯 <a href="https://tanhuajie.github.io/ReasonRFT/">ReasonRFT</a>: Exploring a New RFT Paradigm to Enhance RoboBrain's Visual Reasoning Capabilities.
 </p>
 
-****
-
+## 🔥 Overview
 Recent advancements in Multimodal Large Language Models (MLLMs) have shown remarkable capabilities across various multimodal contexts. However, their application in robotic scenarios, particularly for long-horizon manipulation tasks, reveals significant limitations. These limitations arise from the current MLLMs lacking three essential robotic brain capabilities: **(1) Planning Capability**, which involves decomposing complex manipulation instructions into manageable sub-tasks; **(2) Affordance Perception**, the ability to recognize and interpret the affordances of interactive objects; and **(3) Trajectory Prediction**, the foresight to anticipate the complete manipulation trajectory necessary for successful execution. To enhance the robotic brain's core capabilities from abstract to concrete, we introduce ShareRobot, a high-quality heterogeneous dataset that labels multi-dimensional information such as task planning, object affordance, and end-effector trajectory. ShareRobot's diversity and accuracy have been meticulously refined by three human annotators. Building on this dataset, we developed RoboBrain, an MLLM-based model that combines robotic and general multi-modal data, utilizes a multi-stage training strategy, and incorporates long videos and high-resolution images to improve its robotic manipulation capabilities. Extensive experiments demonstrate that RoboBrain achieves state-of-the-art performance across various robotic tasks, highlighting its potential to advance robotic brain capabilities.
 
 <div align="center">
@@ -26,10 +25,10 @@ Recent advancements in Multimodal Large Language Models (MLLMs) have shown remar
 
 ## 🚀 Features
 This repository supports:
-- **`Data Preparation`**: Please refer to [Dataset Preparation](#Dataset) for how to prepare the dataset.
+- **`Data Preparation`**: Please refer to [Dataset Preparation](https://github.com/FlagOpen/ShareRobot) for how to prepare the dataset.
 - **`Training for RoboBrain`**: Please refer to [Training Section](#Training) for the usage of training scripts.
+- **`Support HF/VLLM Inference`**: Please see [Inference  Section](#Inference), now we support inference with [VLLM](https://github.com/vllm-project/vllm).
 - **`Evaluation for RoboBrain`**: Please refer to [Evaluation Section](#Evaluation) for how to prepare the benchmarks.
-- **`Support VLLM Inference`**: Please see [Inference  Section](#Inference), now we support inference with [VLLM](https://github.com/vllm-project/vllm).
 - **`ShareRobot Generation`**: Please refer to [ShareRobot](https://github.com/FlagOpen/ShareRobot) for details.
 
 
@@ -79,7 +78,7 @@ conda activate robobrain
 pip install -r requirements.txt
 ```
 
-## 🤖 Training
+## <a id="Training"> 🤖 Training</a>
 
 ### 1. Data Preparation
 
@@ -157,7 +156,7 @@ python scripts/infer/convert_robobrain_to_hf.py --model_dir /path/to/original/ch
 ```
 
 
-## 🤖 Inference
+## <a id="Inference">🤖 Inference</a>
 
 ### Option 1: HF inference
 
@@ -250,7 +249,23 @@ response = client.chat.completions.create(
 content = response.choices[0].message.content
 print(content)
 ```
+## <a id="Evaluation">🤖 Evaluation</a>
+*Coming Soon ...*
 
+<div align="center">
+<img src="./assets/result.png" />
+</div>
+
+## 😊 Acknowledgement  
+
+We would like to express our sincere gratitude to the developers and contributors of the following projects:  
+1. [LLaVA-NeXT](https://github.com/LLaVA-VL/LLaVA-NeXT): The comprehensive codebase for training Vision-Language Models (VLMs).  
+2. [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval): A powerful evaluation tool for Vision-Language Models (VLMs).
+3. [vllm](https://github.com/vllm-project/vllm): A high-throughput and memory-efficient LLMs/VLMs inference engine.
+4. [OpenEQA](https://github.com/facebookresearch/open-eqa): A wonderful benchmark for Embodied Question Answering.
+5. [RoboVQA](https://github.com/google-deepmind/robovqa): Provide high-level reasoning models and datasets for robotics applications.
+
+Their outstanding contributions have played a pivotal role in advancing our research and development initiatives.
 
 ## 📑 Citation
 If you find this project useful, welcome to cite us.
