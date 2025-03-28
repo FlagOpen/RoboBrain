@@ -2,7 +2,7 @@
 <img src="./assets/logo.jpg" width="400"/>
 </div>
 
-# **RoboBrain**: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
+# [CVPR 25] RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
 
 
 
