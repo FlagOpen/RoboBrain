@@ -13,7 +13,7 @@
         </a>&nbsp&nbsp🎯 <a href="">RoboOS (Coming Soon)</a>: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
 </p>
 <p align="center">
-</a>&nbsp&nbsp🎯 <a href="https://tanhuajie.github.io/ReasonRFT/">ReasonRFT</a>: Exploring a New RFT Paradigm to Enhance RoboBrain's Visual Reasoning Capabilities.
+</a>&nbsp&nbsp🎯 <a href="https://tanhuajie.github.io/ReasonRFT/">Reason-RFT</a>: Exploring a New RFT Paradigm to Enhance RoboBrain's Visual Reasoning Capabilities.
 </p>
 
 ## 🔥 Overview
@@ -34,24 +34,26 @@ This repository supports:
 
 ## 🗞️ News
 
+- **`2025-03-29`**: 🤗 We have released [Affordance Checkpoint](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/) in Huggingface.
 - **`2025-03-27`**: 🤗 We have released [Planning Checkpoint](https://huggingface.co/BAAI/RoboBrain/) in Huggingface.
-- **`2025-03-26`**: 🔥 We have released the [RoboBrain](https://superrobobrain.github.io/) repository.
-- **`2025-02-27`**: 🌍 Our [RoboBrain](https://superrobobrain.github.io/) was accepted to CVPR2025.
+- **`2025-03-26`**: 🔥 We have released the [RoboBrain](https://github.com/FlagOpen/RoboBrain/) repository.
+- **`2025-02-27`**: 🌍 Our [RoboBrain](http://arxiv.org/abs/2502.21257/) was accepted to CVPR2025.
 
 
 ## 📆 Todo
 - [x] Release scripts for model training and inference.
 - [x] Release Planning checkpoint.
-- [ ] Release Affordance and Trajectory checkpoints.
-- [ ] Release ShareRobot dataset.
+- [x] Release Affordance checkpoint.
+- [ ] Release ShareRobot dataset. *(Uploading ...)*
+- [ ] Release Trajectory checkpoint.
 - [ ] Release evaluation scripts for Benchmarks.
-- [ ] Training more powerful Robobrain (v2).
+- [ ] Training more powerful **Robobrain-v2**.
 
 
 ## 🤗 Models
 
 - **[`Base Planning Model`](https://huggingface.co/BAAI/RoboBrain/)**: The model was trained on general datasets in Stages 1–2 and on the Robotic Planning dataset in Stage 3, which is designed for Planning prediction.
-- **[`A-LoRA for Affordance`](https://huggingface.co/BAAI/RoboBrain/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Affordance dataset to predict affordance. *(Coming Soon)*
+- **[`A-LoRA for Affordance`](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Affordance dataset to predict affordance.
 - **[`T-LoRA for Trajectory`](https://huggingface.co/BAAI/RoboBrain/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Trajectory dataset to predict trajectory. *(Coming Soon)*
 
 <div align="center">
@@ -61,7 +63,7 @@ This repository supports:
 | Models               | Checkpoint                                                     | Description                                                | 
 |----------------------|----------------------------------------------------------------|------------------------------------------------------------|
 | Planning Model       | [🤗 Planning CKPTs](https://huggingface.co/BAAI/RoboBrain/)   | Used for Planning prediction in our paper                   | 
-| Affordance (A-LoRA)  | [🤗 Affordance CKPTs](https://huggingface.co/BAAI/RoboBrain/)      | Used for Affordance prediction in our paper *(Coming Soon)* | 
+| Affordance (A-LoRA)  | [🤗 Affordance CKPTs](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/)      | Used for Affordance prediction in our paper | 
 | Trajectory (T-LoRA)  | [🤗 Trajectory CKPTs](https://huggingface.co/BAAI/RoboBrain/)      | Used for Trajectory prediction in our paper *(Coming Soon)* | 
 
 
@@ -152,61 +154,44 @@ bash scripts/train/stage_4_0_resume_finetune_lora_t.sh
 
 ### 3. Convert original weights to HF weights
 ```bash
-python scripts/infer/convert_robobrain_to_hf.py --model_dir /path/to/original/checkpoint/ --dump_path /path/to/output/
+# Planning Model
+python model/llava_utils/convert_robobrain_to_hf.py --model_dir /path/to/original/checkpoint/ --dump_path /path/to/output/
+
+# A-LoRA & T-RoRA
+python model/llava_utils/convert_lora_weights_to_hf.py --model_dir /path/to/original/checkpoint/ --dump_path /path/to/output/
 ```
 
+## <a id="Inference">⭐️ Inference</a>
 
-## <a id="Inference">🤖 Inference</a>
+### 1. Usage for Planning Prediction
 
-### Option 1: HF inference
+#### Option 1: HF inference
 
-#### Run python script as example:
 ```python
-import torch
-from transformers import AutoProcessor, AutoModelForPreTraining
+from inference import SimpleInference
 
 model_id = "BAAI/RoboBrain"
+model = SimpleInference(model_id)
 
-print("Loading Checkpoint ...")
-model = AutoModelForPreTraining.from_pretrained(
-    model_id, 
-    torch_dtype=torch.float16, 
-    low_cpu_mem_usage=True, 
-).to("cuda:0")
+prompt = "Given the obiects in the image, if you are required to complete the task \"Put the apple in the basket\", what is your detailed plan? Write your plan and explain it in detail, using the following format: Step_1: xxx\nStep_2: xxx\n ...\nStep_n: xxx\n"
 
-processor = AutoProcessor.from_pretrained(model_id)
+image = "./assets/demo/planning.png"
 
-# Define a chat history and use `apply_chat_template` to get correctly formatted prompt
-# Each value in "content" has to be a list of dicts with types ("text", "image") 
-messages = [
-    {
-        "role": "user",
-        "content": [
-            {"type": "text", "text": "What is shown in this image?"},
-            {"type": "image", "url": "http://images.cocodataset.org/val2017/000000039769.jpg"},
-        ],
-    },
-]
+pred = model.inference(prompt, image, do_sample=True)
+print(f"Prediction: {pred}")
 
-print("Processing input...")
-inputs = processor.apply_chat_template(
-    messages, 
-    add_generation_prompt=True, 
-    tokenize=True, 
-    return_dict=True, 
-    return_tensors="pt"
-)
-
-inputs = {k: v.to("cuda:0") for k, v in inputs.items()}
-
-print("Generating output...")
-output = model.generate(**inputs, max_new_tokens=250)
-print(processor.decode(output[0][2:], skip_special_tokens=True))
+''' 
+Prediction: (as an example)
+    Step_1: Move to the apple. Move towards the apple on the table.
+    Step_2: Pick up the apple. Grab the apple and lift it off the table.
+    Step_3: Move towards the basket. Move the apple towards the basket without dropping it.
+    Step_4: Put the apple in the basket. Place the apple inside the basket, ensuring it is in a stable position.
+'''
 
 ```
 
-### Option 2: VLLM inference
-#### Install and launch VLLM
+#### Option 2: VLLM inference
+Install and launch VLLM
 ```bash
 # Install vllm package
 pip install vllm==0.6.6.post1
@@ -215,7 +200,7 @@ pip install vllm==0.6.6.post1
 python -m vllm.entrypoints.openai.api_server --model BAAI/RoboBrain --served-model-name robobrain  --max_model_len 16384 --limit_mm_per_prompt image=8
 ```
 
-#### Run python script as example:
+Run python script as example:
 ```python
 from openai import OpenAI
 import base64
@@ -228,19 +213,23 @@ client = OpenAI(
     base_url=openai_api_base,
 )
 
+prompt = "Given the obiects in the image, if you are required to complete the task \"Put the apple in the basket\", what is your detailed plan? Write your plan and explain it in detail, using the following format: Step_1: xxx\nStep_2: xxx\n ...\nStep_n: xxx\n"
+
+image = "./assets/demo/planning.png"
+
+with open(image, "rb") as f:
+    encoded_image = base64.b64encode(f.read())
+    encoded_image = encoded_image.decode("utf-8")
+    base64_img = f"data:image;base64,{encoded_image}"
+
 response = client.chat.completions.create(
     model="robobrain",
     messages=[
         {
             "role": "user",
             "content": [
-                {
-                    "type": "image_url",
-                    "image_url": {
-                        "url": "http://images.cocodataset.org/val2017/000000039769.jpg"
-                    },
-                },
-                {"type": "text", "text": "What is shown in this image?"},
+                {"type": "image_url", "image_url": {"url": base64_img}},
+                {"type": "text", "text": prompt},
             ],
         },
     ]
@@ -248,7 +237,58 @@ response = client.chat.completions.create(
 
 content = response.choices[0].message.content
 print(content)
+
+'''
+Prediction: (as an example)
+    Step_1: Move to the apple. Move towards the apple on the table.
+    Step_2: Pick up the apple. Grab the apple and lift it off the table.
+    Step_3: Move towards the basket. Move the apple towards the basket without dropping it.
+    Step_4: Put the apple in the basket. Place the apple inside the basket, ensuring it is in a stable position.
+'''
 ```
+
+### 2. Usage for Affordance Prediction
+```python
+from inference import SimpleInference
+
+model_id = "BAAI/RoboBrain"
+lora_id = "BAAI/RoboBrain-LoRA-Affordance"
+model = SimpleInference(model_id, lora_id)
+
+# Example 1:
+prompt = "You are a robot using the joint control. The task is \"pick_up the suitcase\". Please predict a possible affordance area of the end effector?"
+
+image = "./assets/demo/affordance_1.jpg"
+
+pred = model.inference(prompt, image, do_sample=False)
+print(f"Prediction: {pred}")
+
+'''
+    Prediction: [0.733, 0.158, 0.845, 0.263]
+'''
+
+# Example 2:
+prompt = "You are a robot using the joint control. The task is \"push the bicycle\". Please predict a possible affordance area of the end effector?"
+
+image = "./assets/demo/affordance_2.jpg"
+
+pred = model.inference(prompt, image, do_sample=False)
+print(f"Prediction: {pred}")
+
+'''
+    Prediction: [0.600, 0.127, 0.692, 0.227]
+'''
+
+```
+
+<div align="center">
+<img src="./assets/demo/examples.png" />
+</div>
+
+### 3. Usage for Trajectory Prediction
+*Coming Soon ...*
+
+
 ## <a id="Evaluation">🤖 Evaluation</a>
 *Coming Soon ...*
 
