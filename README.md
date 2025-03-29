@@ -10,10 +10,10 @@
         </a>&nbsp&nbsp⭐️ <a href="https://superrobobrain.github.io/">Project</a></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/BAAI/RoboBrain/">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://www.modelscope.cn/models/BAAI/RoboBrain/files/">ModelScope</a>&nbsp&nbsp | &nbsp&nbsp🌎 <a href="https://github.com/FlagOpen/ShareRobot">Dataset</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="http://arxiv.org/abs/2502.21257">Paper</a>&nbsp&nbsp | &nbsp&nbsp💬 <a href="./assets/wechat.png">WeChat</a>
 </p>
 <p align="center">
-        </a>&nbsp&nbsp🎯 <a href="">RoboOS (Coming Soon)</a>: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
+        </a>&nbsp&nbsp🎯 <a href="https://mp.weixin.qq.com/s/APgi5k53hrJo8lpxcAkE-g">RoboOS (Coming Soon)</a>: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
 </p>
 <p align="center">
-</a>&nbsp&nbsp🎯 <a href="https://tanhuajie.github.io/ReasonRFT/">Reason-RFT</a>: Exploring a New RFT Paradigm to Enhance RoboBrain's Visual Reasoning Capabilities.
+</a>&nbsp&nbsp🎯 <a href="https://tanhuajie.github.io/ReasonRFT/">Reason-RFT</a>: Exploring Efficient RFT Paradigm to Enhance RoboBrain's Visual Reasoning Capabilities.
 </p>
 
 ## 🔥 Overview
@@ -47,7 +47,7 @@ This repository supports:
 - [ ] Release ShareRobot dataset. *(Uploading ...)*
 - [ ] Release Trajectory checkpoint.
 - [ ] Release evaluation scripts for Benchmarks.
-- [ ] Training more powerful **Robobrain-v2**.
+- [ ] Training more powerful **Robobrain-V2**.
 
 
 ## 🤗 Models
@@ -65,6 +65,7 @@ This repository supports:
 | Planning Model       | [🤗 Planning CKPTs](https://huggingface.co/BAAI/RoboBrain/)   | Used for Planning prediction in our paper                   | 
 | Affordance (A-LoRA)  | [🤗 Affordance CKPTs](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/)      | Used for Affordance prediction in our paper | 
 | Trajectory (T-LoRA)  | [🤗 Trajectory CKPTs](https://huggingface.co/BAAI/RoboBrain/)      | Used for Trajectory prediction in our paper *(Coming Soon)* | 
+| **RoboBrain-V2**     | 🔥 **RoboBrain-V2**      | **More Powerful Embodied RoboBrain *(Stay Tuned ...)*** | 
 
 
 ## 🛠️ Setup
