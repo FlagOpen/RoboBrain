@@ -54,7 +54,7 @@ This repository supports:
 
 - **[`Base Planning Model`](https://huggingface.co/BAAI/RoboBrain/)**: The model was trained on general datasets in Stages 1–2 and on the Robotic Planning dataset in Stage 3, which is designed for Planning prediction.
 - **[`A-LoRA for Affordance`](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Affordance dataset to predict affordance.
-- **[`T-LoRA for Trajectory`](https://huggingface.co/BAAI/RoboBrain/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Trajectory dataset to predict trajectory. *(Coming Soon)*
+- **[`T-LoRA for Trajectory`](https://huggingface.co/BAAI/RoboBrain-LoRA-Trajectory/)**: Based on the Base Planning Model, Stage 4 involves LoRA-based training with our Trajectory dataset to predict trajectory. *(Coming Soon)*
 
 <div align="center">
 <img src="./assets/training.png" />
@@ -64,7 +64,7 @@ This repository supports:
 |----------------------|----------------------------------------------------------------|------------------------------------------------------------|
 | Planning Model       | [🤗 Planning CKPTs](https://huggingface.co/BAAI/RoboBrain/)   | Used for Planning prediction in our paper                   | 
 | Affordance (A-LoRA)  | [🤗 Affordance CKPTs](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/)      | Used for Affordance prediction in our paper | 
-| Trajectory (T-LoRA)  | [🤗 Trajectory CKPTs](https://huggingface.co/BAAI/RoboBrain/)      | Used for Trajectory prediction in our paper *(Coming Soon)* | 
+| Trajectory (T-LoRA)  | [🤗 Trajectory CKPTs](https://huggingface.co/BAAI/RoboBrain-LoRA-Trajectory/)      | Used for Trajectory prediction in our paper | 
 | **RoboBrain-V2**     | 🔥 **RoboBrain-V2**      | **More Powerful Embodied RoboBrain *(Stay Tuned ...)*** | 
 
 
