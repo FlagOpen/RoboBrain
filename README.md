@@ -27,14 +27,15 @@ Recent advancements in Multimodal Large Language Models (MLLMs) have shown remar
 This repository supports:
 - **`Data Preparation`**: Please refer to [Dataset Preparation](https://github.com/FlagOpen/ShareRobot) for how to prepare the dataset.
 - **`Training for RoboBrain`**: Please refer to [Training Section](#Training) for the usage of training scripts.
-- **`Support HF/VLLM Inference`**: Please see [Inference  Section](#Inference), now we support inference with [VLLM](https://github.com/vllm-project/vllm).
+- **`Support HF/VLLM Inference`**: Please see [Inference Section](#Inference), now we support inference with [VLLM](https://github.com/vllm-project/vllm).
 - **`Evaluation for RoboBrain`**: Please refer to [Evaluation Section](#Evaluation) for how to prepare the benchmarks.
 - **`ShareRobot Generation`**: Please refer to [ShareRobot](https://github.com/FlagOpen/ShareRobot) for details.
 
 
 ## 🗞️ News
-- **`2025-04-04`**: 🤗 We have released [Trajectory Checkpoint](https://huggingface.co/BAAI/RoboBrain-LoRA-Trajectory/) in Huggingface.
-- **`2025-03-29`**: 🤗 We have released [Affordance Checkpoint](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/) in Huggingface.
+- **`2025-04-11`**: 🎉 [RoboBrain](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
+- **`2025-04-04`**: 🤗 We have released [Trajectory Checkpoint (T-LoRA)](https://huggingface.co/BAAI/RoboBrain-LoRA-Trajectory/) in Huggingface.
+- **`2025-03-29`**: 🤗 We have released [Affordance Checkpoint (A-LoRA)](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/) in Huggingface.
 - **`2025-03-27`**: 🤗 We have released [Planning Checkpoint](https://huggingface.co/BAAI/RoboBrain/) in Huggingface.
 - **`2025-03-26`**: 🔥 We have released the [RoboBrain](https://github.com/FlagOpen/RoboBrain/) repository.
 - **`2025-02-27`**: 🌍 Our [RoboBrain](http://arxiv.org/abs/2502.21257/) was accepted to CVPR2025.
