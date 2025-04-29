@@ -249,6 +249,38 @@ Prediction: (as an example)
 '''
 ```
 
+#### Option 3: FlagScale Serve
+[FlagScale](https://github.com/FlagOpen/FlagScale) is a comprehensive toolkit designed to support the entire lifecycle of large models, developed with the backing of the Beijing Academy of Artificial Intelligence (BAAI). FlagScale supports distributed deployment of large models, which can be launched easily through a simple configuration file.
+
+**Set config file and install FlagScale**
+```bash
+git clone https://github.com/FlagOpen/FlagScale.git
+
+cd FlagScale
+
+# service config
+vim examples/llava_onevision/conf/config_llava_onevision.yaml
+# model config
+vim examples/llava_onevision/conf/serve/serve_llava.yaml
+# (multiple nodes deployment required)
+vim examples/llava_onevision/conf/hostfile.txt
+
+# install FlagScale
+pip install .
+```
+
+For better integration with FlagScale, you can optionally install [vLLM inside FlagScale](https://github.com/FlagOpen/FlagScale?tab=readme-ov-file#setup).
+
+**Launch service**
+```bash
+# launch service with default config file
+flagscale serve llava_onevision
+# or launch service with custom config file
+flagscale serve llava_onevision <MODEL_CONFIG_YAML>
+```
+The Python script used to call the service remains the same as before.
+
+
 ### 2. Usage for Affordance Prediction
 ```python
 from inference import SimpleInference
