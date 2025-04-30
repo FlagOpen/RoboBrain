@@ -163,6 +163,17 @@ python model/llava_utils/convert_robobrain_to_hf.py --model_dir /path/to/origina
 python model/llava_utils/convert_lora_weights_to_hf.py --model_dir /path/to/original/checkpoint/ --dump_path /path/to/output/
 ```
 
+### (Option) 4. Compress Model
+Model compression by Flagscale, the model is compressed to W8A16, reducing the model size by more than 40%. The inference speed can be accelerated by up to 50%, but the generated results after compression may differ slightly from those before compression.
+```bash
+git clone https://github.com/FlagOpen/FlagScale.git
+cd FlagScale
+
+python run.py --config-path examples/llava_onevision/conf --config-name  config_compress
+
+### compress model save in RoboBrain_Compressed directory
+``` 
+
 ## <a id="Inference">⭐️ Inference</a>
 
 ### 1. Usage for Planning Prediction
