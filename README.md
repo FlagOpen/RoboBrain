@@ -10,6 +10,9 @@
         </a>&nbsp&nbsp⭐️ <a href="https://superrobobrain.github.io/">Project</a></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/BAAI/RoboBrain/">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://www.modelscope.cn/models/BAAI/RoboBrain/files/">ModelScope</a>&nbsp&nbsp | &nbsp&nbsp🌎 <a href="https://github.com/FlagOpen/ShareRobot">Dataset</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="http://arxiv.org/abs/2502.21257">Paper</a>&nbsp&nbsp | &nbsp&nbsp💬 <a href="./assets/wechat.png">WeChat</a>
 </p>
 <p align="center">
+        </a>&nbsp&nbsp🔥 <a href="https://github.com/FlagOpen/RoboBrain2.0">**RoboBrain 2.0**</a>: More powerful version of RoboBrain **(Recommended)**.
+</p>
+<p align="center">
         </a>&nbsp&nbsp🎯 <a href="https://github.com/FlagOpen/RoboOS">RoboOS</a>: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
 </p>
 <p align="center">
@@ -33,6 +36,8 @@ This repository supports:
 
 
 ## 🗞️ News
+- **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface..
+- **`2025-06-06`**: 🔥 We're excited to announce the release of our more powerful [RoboBrain 2.0](https://github.com/FlagOpen/RoboBrain2.0).
 - **`2025-04-11`**: 🎉 [RoboBrain](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
 - **`2025-04-04`**: 🤗 We have released [Trajectory Checkpoint (T-LoRA)](https://huggingface.co/BAAI/RoboBrain-LoRA-Trajectory/) in Huggingface.
 - **`2025-03-29`**: 🤗 We have released [Affordance Checkpoint (A-LoRA)](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/) in Huggingface.
@@ -47,8 +52,7 @@ This repository supports:
 - [x] Release Affordance checkpoint.
 - [x] Release ShareRobot dataset.
 - [x] Release Trajectory checkpoint.
-- [ ] Release evaluation scripts for Benchmarks.
-- [ ] Training more powerful **Robobrain-V2**.
+- [x] Training more powerful **Robobrain-2.0**.
 
 
 ## 🤗 Models
@@ -66,8 +70,10 @@ This repository supports:
 | Planning Model       | [🤗 Planning CKPTs](https://huggingface.co/BAAI/RoboBrain/)   | Used for Planning prediction in our paper                   | 
 | Affordance (A-LoRA)  | [🤗 Affordance CKPTs](https://huggingface.co/BAAI/RoboBrain-LoRA-Affordance/)      | Used for Affordance prediction in our paper | 
 | Trajectory (T-LoRA)  | [🤗 Trajectory CKPTs](https://huggingface.co/BAAI/RoboBrain-LoRA-Trajectory/)      | Used for Trajectory prediction in our paper | 
-| **RoboBrain-V2**     | 🔥 **RoboBrain-V2**      | **More Powerful Embodied RoboBrain *(Stay Tuned ...)*** | 
+| RoboBrain 2.0 7B     | [🤗 BAAI/RoboBrain2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B)   | 7B parameter version of the RoboBrain2.0                   | 
+| RoboBrain 2.0 32B    | [🤗 BAAI/RoboBrain2.0-32B](https://huggingface.co/BAAI/RoboBrain2.0-32B)   | 32B parameter version of the RoboBrain2.0 *(Coming soon)*
 
+**Note: Please refer to [RoboBrain 2.0 Github](https://github.com/FlagOpen/RoboBrain2.0) for the usage of RoboBrain 2.0**
 
 ## 🛠️ Setup
 
