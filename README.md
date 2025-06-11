@@ -10,7 +10,7 @@
         </a>&nbsp&nbsp⭐️ <a href="https://superrobobrain.github.io/">Project</a></a>&nbsp&nbsp | &nbsp&nbsp🤗 <a href="https://huggingface.co/BAAI/RoboBrain/">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://www.modelscope.cn/models/BAAI/RoboBrain/files/">ModelScope</a>&nbsp&nbsp | &nbsp&nbsp🌎 <a href="https://github.com/FlagOpen/ShareRobot">Dataset</a>&nbsp&nbsp | &nbsp&nbsp📑 <a href="http://arxiv.org/abs/2502.21257">Paper</a>&nbsp&nbsp | &nbsp&nbsp💬 <a href="./assets/wechat.png">WeChat</a>
 </p>
 <p align="center">
-        </a>&nbsp&nbsp🔥 <a href="https://github.com/FlagOpen/RoboBrain2.0">RoboBrain 2.0</a>: More powerful version of RoboBrain: See Better. Think Harder. Do Smarter.
+        </a>&nbsp&nbsp🔥🔥 <a href="https://github.com/FlagOpen/RoboBrain2.0"><strong>RoboBrain 2.0</strong></a><strong>: More powerful version of RoboBrain: See Better. Think Harder. Do Smarter.</strong>
 </p>
 <p align="center">
         </a>&nbsp&nbsp🎯 <a href="https://github.com/FlagOpen/RoboOS">RoboOS</a>: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
@@ -52,7 +52,7 @@ This repository supports:
 - [x] Release Affordance checkpoint.
 - [x] Release ShareRobot dataset.
 - [x] Release Trajectory checkpoint.
-- [x] Training more powerful **Robobrain-2.0**.
+- [x] Release more powerful **Robobrain 2.0**.
 
 
 ## 🤗 Models
